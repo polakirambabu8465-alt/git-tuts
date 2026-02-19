@@ -1,20 +1,33 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'M3'
+    }
+
     stages {
+
+        stage('Verify Maven') {
+            steps {
+                bat 'mvn -v'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Building..'
+                bat 'mvn clean compile'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing..'
+                bat 'mvn test'
             }
         }
-        stage('Deploy') {
+
+        stage('Package') {
             steps {
-                echo 'Deploying....'
+                bat 'mvn package'
             }
         }
     }
