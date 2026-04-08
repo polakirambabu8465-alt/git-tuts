@@ -9,7 +9,7 @@ public class SecondCode {
 		
 		 
 		        WebDriver driver = new EdgeDriver();
-		        
+		        //ram new
 		        // Add options (e.g., maximize window)
 		        // ChromeOptions options = new ChromeOptions();
 		        // options.addArguments("--start-maximized");
